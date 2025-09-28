@@ -3,11 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tournoi - TT Locmaria-Plouzané</title>
+  <title>Contact - TT Locmaria-Plouzané</title>
   <link rel="stylesheet" href="css/styles.css">
-  <!-- jsPDF + AutoTable -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
   <div class="page-wrapper">
@@ -32,7 +29,7 @@
                 <li><a href="adresse.html">Adresse</a></li>
                 <li><a href="tarifs.html">Tarifs</a></li>
                 <li><a href="#">Inscription</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
               </ul>
             </li>
             <li><a href="#">News</a></li>
@@ -47,38 +44,47 @@
           </ul>
         </nav>
       </header>
-      <div class="landing_page"></div>
     </section>
 
-    <section class="tournoi-section">
-      <div class="tournoi-title">
-        <h1>Tournoi de double d’hiver</h1>
-      </div>
-      <div class="tournoi-intro">
-        <p>
-          Venez participer à la 1 ère Edition de notre Tournoi de Double d’Hiver ! 
-          Inscrivez-vous dès maintenant en envoyant un mail à : <br>
-          <a href="mailto:nath-tt-loc@hotmail.com">nath-tt-loc@hotmail.com</a>.<br>
-          Nos tableaux sont à seulement 6 € chacun et une restauration sur place est prévue pour vous régaler !<br>
-          Venez partager sport, fun et bonne ambiance ! 🏓
-        </p>
-      </div>
+    <!-- Section Contact -->
+    <section class="contact-section">
+      <h1>Contact du Club</h1>
 
-      <div class="tournoi-content">
-        <!-- Affiches du tournoi -->
-        <div class="tournoi-affiches">
-          <div class="tournoi-affiche">
-            <img src="images/affiche_tournoi.jpg" alt="Affiche tournoi" class="clickable-affiche">
-          </div>
-          <div class="tournoi-affiche">
-            <img src="images/Affiche2_tt_loc.jpg" alt="Affiche tournoi" class="clickable-affiche">
-          </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <img src="images/martial.jpg" alt="Martial Ollivier">
+          <h2>Martial Ollivier</h2>
+          <p><strong>Président</strong></p>
+          <p>📞 06 40 58 18 60</p>
+          <p>📧 <a href="mailto:tt.locmaria@gmail.com">tt.locmaria@gmail.com</a></p>
+        </div>
+
+        <div class="contact-card">
+          <img src="images/thierry.jpg" alt="Thierry Degardin">
+          <h2>Thierry Degardin</h2>
+          <p><strong>Président</strong></p>
+          <p>📞 07 83 79 84 95</p>
+        </div>
+
+        <div class="contact-card">
+          <img src="images/simon.jpg" alt="Simon Blanchard">
+          <h2>Simon Blanchard</h2>
+          <p><strong>Secrétaire</strong></p>
+          <p>📞 06 71 86 03 17</p>
+        </div>
+
+        <div class="contact-card">
+          <img src="images/nathalie.jpg" alt="Nathalie Ollivier">
+          <h2>Nathalie Ollivier</h2>
+          <p><strong>Trésorière & Community Manager</strong></p>
+          <p>📞 06 22 57 20 17</p>
+          <p>📧 <a href="mailto:nath-tt-loc@hotmail.com">nath-tt-loc@hotmail.com</a></p>
         </div>
       </div>
     </section>
-  </div> <!-- 🔥 FIN page-wrapper -->
+  </div>
 
-  <!-- Footer en dehors du wrapper -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-left">
       <img src="images/logo_TT_LOC.png" alt="Logo TT Locmaria-Plouzané" class="footer-logo">
@@ -98,12 +104,5 @@
       <p class="copyright">© 2025 TT LOC</p>
     </div>
   </footer>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox-overlay">
-    <img src="" alt="Affiche agrandie">
-  </div>
-
-  <script src="js/script.js" defer></script>
 </body>
 </html>

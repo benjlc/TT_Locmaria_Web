@@ -7,6 +7,31 @@
   padding: 0;
 }
 
+/* --- Layout global --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* toujours au moins hauteur écran */
+}
+
+.top_page {
+  flex-shrink: 0; /* header taille fixe */
+}
+
+.page-wrapper {
+  flex: 1; /* prend tout l’espace dispo */
+}
+
+.site-footer {
+  flex-shrink: 0; /* footer taille fixe */
+}
+
 body {
   margin: 0 auto;
 }
@@ -212,9 +237,9 @@ nav.nav {
 }
 
 .edt-table td.jeune {
-  background-color: mediumpurple; /* vert pour confirmé */
+  background-color: mediumpurple !important;
+  color: white !important;
   font-weight: bold;
-  color: white;
 }
 
 .edt-table td.match {
@@ -279,16 +304,27 @@ nav.nav {
     margin: 8px 0;
   }
 }
+/* --- Sticky Layout --- */
+
+
+.page-wrapper {
+  flex: 1; /* prend tout l’espace restant */
+  display: flex;
+  flex-direction: column;
+}
+
 /* --- Footer --- */
 .site-footer {
+  width: 100%;
   background: #54514F;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  flex-wrap: wrap; /* pour gérer les petits écrans */
+  flex-wrap: wrap;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
 .footer-left img.footer-logo {
@@ -329,7 +365,7 @@ nav.nav {
   color: #bbb;
 }
 
-/* Responsive : sur mobile tout est centré */
+/* --- Responsive Footer --- */
 @media (max-width: 768px) {
   .site-footer {
     flex-direction: column;
@@ -340,6 +376,7 @@ nav.nav {
     margin-top: 10px;
   }
 }
+
 
 /* --- Section Tarifs --- */
 .tarifs-section {
@@ -640,38 +677,136 @@ nav.nav {
 }
 
 
+/* ==========================
+   Section Tournoi
+========================== */
+
+/* Container principal de la section */
 .tournoi-section {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
+/* Titre principal de la section */
+.tournoi-title {
+  font-size: 28px;
+  color: #003366;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.tournoi-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #64C93E;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Paragraphe d’introduction */
+.tournoi-intro {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  max-width: 700px;
+  margin: 20px auto 40px;
+}
+
+/* Container des affiches et du formulaire */
 .tournoi-content {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
   justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap; /* utile pour mobile */
+  align-items: flex-start;
+  flex-wrap: wrap; /* pour mobile */
+}
+
+/* Ajustement du titre du tournoi sur mobile */
+@media (max-width: 768px) {
+  .tournoi-title h1 {
+    font-size: 22px;   /* taille plus petite pour mobile */
+    line-height: 1.3;  /* un peu plus compact */
+  }
+}
+
+
+/* ==========================
+   Affiches
+========================== */
+.tournoi-affiches {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 1 500px; /* prend l’espace disponible */
+}
+
+.tournoi-affiche {
+  flex: 1 1 48%; /* chaque affiche prend environ la moitié */
+  max-width: 550px;
+  text-align: center;
 }
 
 .tournoi-affiche img {
-  width: 100%;       /* prend toute la largeur du conteneur */
-  max-width: 400px;  /* limite maximale */
-  border-radius: 8px;
+  width: 100%;
+  max-width: 550px; /* limite maximale */
+  height: auto;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  display: block;    /* pour que margin auto fonctionne */
-  margin: 0 auto;    /* centre horizontalement */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Overlay (fond sombre) */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none; /* caché par défaut */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Image affichée en grand */
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+/* Fermer au clic sur le fond */
+.lightbox-overlay:target {
+  display: flex;
+}
+
+
+/* ==========================
+   Formulaire
+========================== */
+.tournoi-form {
+  flex: 1 1 400px;
+  max-width: 400px;
+  text-align: left;
 }
 
 .tournoi-form form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px;
-  width: 100%;
-  text-align: left;
 }
 
 .tournoi-form input,
@@ -679,6 +814,7 @@ nav.nav {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .tournoi-form button {
@@ -695,55 +831,71 @@ nav.nav {
   background: #0055aa;
 }
 
-/* Titre principal */
-.tournoi-title {
-  font-size: 20px;             /* taille plus grande */
-  color: #003366;              /* bleu foncé du club */
-  text-transform: uppercase;   /* tout en majuscule (optionnel) */
-  letter-spacing: 2px;         /* espace entre les lettres */
-  margin-bottom: 20px;         /* espace entre le titre et le paragraphe */
-  font-weight: 700;            /* bien gras */
-  position: relative;
+/* ==========================
+   Tableaux d’inscrits
+========================== */
+.table-container {
+  overflow-x: auto;
+  margin: 20px 0;
 }
 
-/* Petite barre décorative sous le titre */
-.tournoi-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: #64C93E;   /* vert du club */
-  margin: 10px auto 0;   /* centré sous le titre */
-  border-radius: 2px;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-/* Paragraphe d’introduction */
-.tournoi-intro {
-  font-size: 18px;
-  line-height: 1.8;          /* espace entre les lignes */
-  color: #444;               /* gris doux */
-  max-width: 700px;          /* largeur max pour éviter que ce soit trop long */
-  margin: 20px auto 40px;    /* centré avec espace autour */
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 14px;
 }
 
-/* Sur petits écrans (mobile/tablette) */
+th {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+}
+
+/* Boutons PDF */
+.btn-pdf {
+  padding: 10px 20px;
+  background-color: #64C93E;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-pdf:hover {
+  background-color: #4BA632;
+}
+
+/* ==========================
+   Responsivité
+========================== */
+@media (max-width: 1024px) {
+  .tournoi-affiche {
+    max-width: 45%;
+  }
+}
+
 @media (max-width: 768px) {
-  .tournoi-affiche img {
-    width: 80%;         /* réduit la taille de l'image */
-    max-width: 300px;   /* limite maximale */
-    margin: 0 auto;     /* centre horizontalement */
-    display: block;
-  }
-
   .tournoi-content {
-    flex-direction: column;  /* image et formulaire empilés */
-    gap: 20px;               /* espace réduit entre les éléments */
-    align-items: center;     /* centre les éléments */
-    justify-content: center; /* assure le centrage horizontal */
+    flex-direction: column; /* affiche et formulaire empilés */
+    align-items: center;
+    gap: 30px;
   }
 
-  .tournoi-form form {
-    max-width: 100%;         /* formulaire prend toute la largeur disponible */
+  .tournoi-affiche {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  .tournoi-form {
+    flex: 1 1 100%;
+    max-width: 90%;
   }
 }
 
@@ -914,3 +1066,125 @@ h2 {
 #pdfAll {
   margin-top: 15px; /* espace au-dessus du bouton */
 }
+
+/* Conteneur map + image côte à côte (desktop par défaut) */
+.addr-pics {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* aligne map et image en haut */
+  gap: 20px; /* espace entre map et image */
+  margin-top: 20px;
+}
+
+/* Map et image - taille plus grande sur desktop */
+.map-container iframe,
+.entre-content img {
+  width: 100%;
+  max-width: 550px; /* agrandi par rapport à 450px */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Image centrée dans son container avec titre */
+.entre-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entre-content .titre_addr {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Responsive : petit écran */
+@media (max-width: 768px) {
+  .addr-pics {
+    flex-direction: column; /* empile map et image */
+    align-items: center;
+  }
+
+  .map-container iframe,
+  .entre-content img {
+    max-width: 90%; /* occupe presque toute la largeur */
+    margin: 10px 0;
+  }
+}
+
+/* --- Contact --- */
+.contact-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.contact-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.contact-card h2 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  color: #003366;
+}
+
+.contact-card p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.contact-card a {
+  color: #0055aa;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
