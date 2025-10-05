@@ -461,6 +461,10 @@ nav.nav {
   border-radius: 8px; /* arrondir les coins si tu veux */
 }
 
+.equipe-texte {
+  margin-top: 40px; /* espace entre l’image et le texte d’équipe */
+}
+
 /* Menu normal */
 .nav-links li a {
   color: white;
@@ -1282,4 +1286,48 @@ h2 {
     .close:hover {
       color: #ff0000;
     }
+
+    .equipes-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.equipes-section h1 {
+  font-size: clamp(28px, 6vw, 42px);
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.equipes-section p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.equipes-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+
+.equipe-card img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.equipe-card img:hover {
+  transform: scale(1.05);
+}
+
+.equipe-card h2 {
+  margin-top: 10px;
+  color: #1d3557;
+  font-size: 1.2rem;
+}
+
 
