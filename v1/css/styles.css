@@ -1185,101 +1185,16 @@ h2 {
   }
 }
 
+.nav-links {
+  display: none; /* caché sur mobile */
+  flex-direction: column;
+}
+
+.nav-links.active {
+  display: flex; /* affiché quand on clique */
+}
 
 
-    /* --- Amélioration de la galerie --- */
-    .galerie-section {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-color: #f9f9f9;
-    }
 
-    .galerie-section h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1d3557;
-    }
 
-    .galerie-section p {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      justify-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .photo-grid img {
-      width: 100%;
-      max-width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .photo-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    }
-
-    .album-link {
-      display: inline-block;
-      font-size: 1.1rem;
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .album-link:hover {
-      color: #0056b3;
-      text-decoration: underline;
-    }
-
-    /* --- Lightbox --- */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-    }
-
-    .lightbox:target {
-      display: flex;
-    }
-
-    .close {
-      position: absolute;
-      top: 30px;
-      right: 50px;
-      font-size: 2rem;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .close:hover {
-      color: #ff0000;
-    }
 
