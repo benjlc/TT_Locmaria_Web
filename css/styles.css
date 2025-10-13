@@ -87,6 +87,7 @@ nav.nav {
   display: flex;
   justify-content: flex-end;
   position: relative;
+   margin-right: 40px; /* ⇠ décale le menu vers la gauche */
 }
 
 /* Liste horizontale */
@@ -464,6 +465,59 @@ nav.nav {
 .equipe-texte {
   margin-top: 40px; /* espace entre l’image et le texte d’équipe */
 }
+
+/* --- Section Partenariat --- */
+.partenariat-section {
+  background: #fff8f0; /* fond doux légèrement orangé */
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid #ffcc80;
+  border-bottom: 2px solid #ffcc80;
+}
+
+.partenariat-section h1 {
+  color: #e67e22;
+  font-size: clamp(28px, 6vw, 48px);
+  margin-bottom: 10px;
+}
+
+.partenariat-section h2 {
+  color: #333;
+  font-size: clamp(20px, 4vw, 28px);
+  margin-bottom: 10px;
+}
+
+.partenariat-section h3 {
+  color: #003366;
+  font-size: clamp(22px, 5vw, 32px);
+  margin-bottom: 25px;
+}
+
+.partenariat-image img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 20px auto;
+}
+
+.partenariat-texte {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.partenariat-note {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+}
+
 
 /* Menu normal */
 .nav-links li a {
@@ -1331,3 +1385,40 @@ h2 {
 }
 
 
+.partenaires-section {
+  background: #f5f5f5; /* couleur douce pour séparer du contenu */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.partenaires-section h2 {
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 30px;
+}
+
+.partenaires-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* espace entre les logos */
+}
+
+.partenaires-logos img {
+  max-width: 200px;  /* limite la taille des logos */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partenaires-logos img:hover {
+  transform: scale(1.1); /* effet au survol */
+}
+
+/* Responsive : logos plus petits sur petit écran */
+@media (max-width: 768px) {
+  .partenaires-logos img {
+    max-width: 120px;
+  }
+}
