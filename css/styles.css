@@ -1386,15 +1386,9 @@ h2 {
 
 
 .partenaires-section {
-  background: #f5f5f5; /* couleur douce pour séparer du contenu */
-  padding: 40px 20px;
+  background: #f5f5f5;
+  padding: 30px 10px;
   text-align: center;
-}
-
-.partenaires-section h2 {
-  font-size: 28px;
-  color: #003366;
-  margin-bottom: 30px;
 }
 
 .partenaires-logos {
@@ -1402,26 +1396,53 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* espace entre les logos */
+  gap: 30px;
 }
 
+.partenaires-logos h2 {
+  font-size: 28px;
+  color: #003366;
+  margin: 0 20px;
+  order: 0; /* pour que le titre soit avant ou au centre selon le flux */
+}
+
+/* Logos normaux */
 .partenaires-logos img {
-  max-width: 200px;  /* limite la taille des logos */
+  max-width: 200px;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .partenaires-logos img:hover {
-  transform: scale(1.1); /* effet au survol */
+  transform: scale(1.1);
 }
 
-/* Responsive : logos plus petits sur petit écran */
+/* --- Version mobile --- */
 @media (max-width: 768px) {
+  .partenaires-logos {
+    flex-wrap: nowrap;          /* pas de retour à la ligne */
+    gap: 10px;                  /* espace plus petit */
+    justify-content: center;    /* tout reste bien centré */
+    align-items: center;
+    overflow-x: auto;           /* permet de scroller horizontalement si trop large */
+  }
+
+  .partenaires-logos h2 {
+    font-size: 18px;            /* texte plus petit */
+    margin: 0 10px;
+  }
+
   .partenaires-logos img {
-    max-width: 120px;
+    max-width: 80px;            /* logos réduits */
+  }
+
+  .partenaires-section {
+    padding: 20px 5px;
   }
 }
+
+
 
 /* --- Section Partenariat PL Constructions --- */
 .partenariat-section-PL {
