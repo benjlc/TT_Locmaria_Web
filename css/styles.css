@@ -1557,3 +1557,34 @@ h2 {
     width: 85%;
   }
 }
+
+/* --- Mise en page du texte NEWS --- */
+.news-texte {
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+/* --- Version mobile : on insère des retours à la ligne spécifiques --- */
+@media (max-width: 600px) {
+  .news-texte br:nth-of-type(1)::after {
+    content: " "; /* évite un espace superflu */
+  }
+
+  /* petite astuce : on réduit un peu la taille du texte aussi */
+  .news-texte {
+    font-size: 1rem;
+  }
+}
+/* Par défaut : pas de saut de ligne sur ordinateur */
+.br-mobile {
+  display: none;
+}
+
+/* Sur mobile : on affiche un retour à la ligne */
+@media (max-width: 600px) {
+  .br-mobile {
+    display: block;
+  }
+}
+
