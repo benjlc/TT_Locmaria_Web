@@ -18,3 +18,4 @@ document.querySelectorAll('.clickable-affiche').forEach(img => {
 lightbox.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
+
