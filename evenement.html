@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adresse - TT Locmaria-Plouzané</title>
+  <title>News - TT Locmaria-Plouzané</title>
   <meta name="description" content="Site officiel du club de Tennis de Table TT Locmaria-Plouzané : horaires, équipes, tournois, galerie photos.">
   <meta name="keywords" content="TT Locmaria, tennis de table, ping, club sportif, Plouzané, championnat">
   <link rel="stylesheet" href="css/styles.css">
@@ -11,18 +11,18 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/logo_tt_loc32.png">
 </head>
 <body>
+  <div class="page-wrapper">
+    <section class="top_page">
+      <header>
+        <img src="images/logo_TT_LOC.png" alt="Logo TT Locmaria-Plouzané" class="logo">
 
-  <section class="top_page">
-    <header>
-      <img src="images/logo_TT_LOC.png" alt="Logo TT Locmaria-Plouzané" class="logo">
+        <h1 class="big_title">
+          <span class="title-full">TT LOCMARIA PLOUZANÉ</span>
+          <span class="title-medium">TT LOCMARIA</span>
+          <span class="title-small">TT LOC</span>
+        </h1>
 
-      <h1 class="big_title">
-        <span class="title-full">TT LOCMARIA PLOUZANÉ</span>
-        <span class="title-medium">TT LOCMARIA</span>
-        <span class="title-small">TT LOC</span>
-      </h1>
-
-      <nav class="nav">
+        <nav class="nav">
         <button class="menu-toggle">☰</button>
         <ul class="nav-links">
           <li><a href="index.html">Accueil</a></li>
@@ -39,6 +39,7 @@
               </ul>w
           </li>
           <li><a href="evenement.html">Evenement</a></li>
+          <li><a href="boutique.html">Vente</a></li>
           <li><a href="boutique.html">Boutique</a></li>
           <li class="dropdown">
             <a href="#">Tournoi</a>
@@ -50,11 +51,9 @@
           <!--<li><a href="#">Connexion</a></li>-->
         </ul>
       </nav>
-    </header>
-    <div class="landing_page"></div>
-  </section>
-
-  <section class="partenaires-section">
+      </header>
+    </section>
+    <section class="partenaires-section">
   <div class="partenaires-logos">
     <h2>Nos Partenaires :</h2>
     <a href="https://www.facebook.com/profile.php?id=100086298253453&locale=fr_FR" target="_blank">
@@ -70,29 +69,34 @@
   </div>
 </section>
 
- <main>
-  <section class="adresse-section">
-    <h1>Adresse du Club TT Locmaria-Plouzané</h1>
+     <!-- SECTION NEWS -->
+  <section class="news-section">
+    <div class="news-content">
+      <h1>🎭 THÉÂTRE SUR COUR 🎭</h1>
+      <p class="news-texte">
+  Le théâtre sur cour fait son show <span class="br-mobile"></span>
+  à Locmaria-Plouzané <span class="br-mobile"></span>
+  le <strong>samedi 25 octobre</strong> !<br>
+  Ne manquez pas cette occasion de rire et de passer un excellent moment en bonne compagnie.<br>
+  On vous attend nombreux ! 🌟
+</p>
 
-    <div class="adresse-content">
-      <p><strong>Salle Omnisports Keralauraurent</strong></p>
-      <p>Route de Pen Ar Menez</p>
-      <p>29280 Locmaria-Plouzané</p>  
-
-      <div class="addr-pics">
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2650.526510571976!2d-4.6439411231290695!3d48.369621334977815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48169500634f86f1%3A0x5f392044a0f08707!2sLocmaria%20Tennis%20de%20Table!5e0!3m2!1sfr!2snl!4v1759087787895!5m2!1sfr!2snl"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="news-affiches">
+        <div class="news-affiche">
+          <img src="images/affiche_theatre1.jpg" alt="Affiche Théâtre 1" class="clickable-affiche">
         </div>
-
-        <div class="entre-content">
-          <img src="images/adresse_tt_loc.jpg" alt="Entrée du club TT LOC">
-          <p class="titre_addr">Entrée du club TT LOC</p>
+        <div class="news-affiche">
+          <img src="images/affiche_theatre2.jpg" alt="Affiche Théâtre 2" class="clickable-affiche">
         </div>
       </div>
     </div>
   </section>
-</main>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox-overlay">
+    <img src="" alt="Affiche agrandie">
+  </div>
+  </div>
 <section class="partenaires-section">
   <div class="partenaires-logos">
     <h2>Nos Partenaires :</h2>
@@ -108,28 +112,31 @@
     
   </div>
 </section>
-
+  <!-- Footer -->
   <footer class="site-footer">
-  <div class="footer-left">
-    <img src="images/logo_TT_LOC.png" alt="Logo TT Locmaria-Plouzané" class="footer-logo">
-  </div>
+    <div class="footer-left">
+      <img src="images/logo_TT_LOC.png" alt="Logo TT Locmaria-Plouzané" class="footer-logo">
+    </div>
 
-  <div class="footer-center">
-    <p><strong>TT Locmaria-Plouzané</strong></p>
-    <p>Adresse : Salle Omnisports Keralauraurent – Route de Pen Ar Menez 29280</p>
-    <p>Téléphone : 06 71 86 03 17 <br>
+    <div class="footer-center">
+      <p><strong>TT Locmaria-Plouzané</strong></p>
+      <p>Adresse : Salle Omnisports Keralauraurent – Route de Pen Ar Menez 29280</p>
+      <p>Téléphone : 06 71 86 03 17 <br>
       06 22 57 20 17</p>
-    <p>Email : <a href="mailto:tt.locmaria@gmail.com">tt.locmaria@gmail.com</a></p>
-  </div>
+      <p>Email : <a href="mailto:tt.locmaria@gmail.com">tt.locmaria@gmail.com</a></p>
+    </div>
 
-  <div class="footer-right">
-    <a href="https://www.facebook.com/tt.loc.860560" target="_blank" class="social-link">
-      <img src="images/facebook.png" alt="Facebook" class="social-icon">
-    </a>
-    <p class="copyright">© 2025 TT LOC</p>
-  </div>
+    <div class="footer-right">
+      <a href="https://www.facebook.com/tt.loc.860560" target="_blank" class="social-link">
+        <img src="images/facebook.png" alt="Facebook" class="social-icon">
+      </a>
+      <p class="copyright">© 2025 TT LOC</p>
+    </div>
   </footer>
-
+   <!-- Lightbox -->
+  <div id="lightbox" class="lightbox-overlay">
+    <img src="" alt="Affiche agrandie">
+  </div>
   <script src="js/script.js" defer></script>
 </body>
 </html>

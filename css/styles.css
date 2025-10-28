@@ -1504,6 +1504,66 @@ h2 {
   }
 }
 
+/* --- Section Partenariat M2 Services --- */
+.partenariat-section-M2 {
+  background: #e0f7e0; /* vert clair pour le fond */
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid #9adf9a;
+  border-bottom: 2px solid #9adf9a;
+}
+
+.partenariat-content-M2 h1 {
+  color: #003366;
+  font-size: clamp(28px, 6vw, 48px);
+  margin-bottom: 10px;
+}
+
+.partenariat-content-M2 h2 {
+  color: #333;
+  font-size: clamp(20px, 4vw, 28px);
+  margin-bottom: 10px;
+}
+
+.partenariat-content-M2 h3 {
+  color: #0055a4;
+  font-size: clamp(22px, 5vw, 32px);
+  margin-bottom: 25px;
+}
+
+.partenariat-content-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.partenariat-image-M2 img {
+  width: 450px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.partenariat-textes-M2 {
+  flex: 1;
+  max-width: 550px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .partenariat-content-3 {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 /* ----- SECTION NEWS ----- */
 .news-section {
   background: #f5f5f5;
