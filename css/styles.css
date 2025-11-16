@@ -1747,3 +1747,8 @@ h2 {
 #download:hover {
   background: #005fa3;
 }
+
+.seo-title {
+  position: absolute;
+  left: -9999px;
+}
