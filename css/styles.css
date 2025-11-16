@@ -1513,6 +1513,14 @@ h2 {
   border-bottom: 2px solid #9adf9a;
 }
 
+.partenariat-section-LH {
+  background: #b6e3be; /* vert clair pour le fond */
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid #9adf9a;
+  border-bottom: 2px solid #9adf9a;
+}
+
 .partenariat-content-M2 h1 {
   color: #003366;
   font-size: clamp(28px, 6vw, 48px);
@@ -1648,3 +1656,94 @@ h2 {
   }
 }
 
+.vente-section {
+  text-align: center;
+  background: #e5f8e5; /* vert clair */
+  padding: 40px 20px;
+}
+
+.vente-affiche img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.vente-affiche img:hover {
+  transform: scale(1.05);
+}
+
+.bon-de-commande {
+  position: relative;
+  width: 900px; /* adapte à ta largeur d’image */
+  margin: 40px auto;
+}
+
+.bon-fond {
+  width: 100%;
+  display: block;
+}
+
+.champ {
+  position: absolute;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+/* Positionnement */
+.nom {
+  top: 30px;
+  left: 50px;
+  width: 300px;
+}
+
+.tel {
+  top: 30px;
+  left: 500px;
+  width: 200px;
+}
+
+.total-saucisson {
+  top: 720px;
+  left: 380px;
+  width: 100px;
+  text-align: right;
+}
+
+.total-biere {
+  top: 520px;
+  left: 720px;
+  width: 100px;
+  text-align: right;
+}
+
+.total-general {
+  top: 780px;
+  left: 720px;
+  font-weight: bold;
+  background: #fffacd;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* Bouton de téléchargement */
+#download {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border: none;
+  background: #0078d7;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#download:hover {
+  background: #005fa3;
+}
