@@ -54,8 +54,10 @@ header {
 }
 
 header img.logo {
-  width: 200px;
+  width: 180px;
   flex-shrink: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* --- Titre adaptatif --- */
