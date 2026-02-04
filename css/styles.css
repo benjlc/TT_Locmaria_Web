@@ -67,6 +67,9 @@ header img.logo {
   flex-grow: 1;
   white-space: nowrap;
   font-size: clamp(24px, 5vw, 50px);
+  font-weight: bold;      /* équivalent h1 */
+  margin: 0.67em 0;       /* marges par défaut du h1 */
+  line-height: 1.2;
 }
 
 /* Variantes de titre */
@@ -1750,7 +1753,11 @@ h2 {
   background: #005fa3;
 }
 
-.seo-title {
+.seo-title{
   position: absolute;
   left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
