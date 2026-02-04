@@ -753,9 +753,20 @@ nav.nav {
   font-family: Arial, sans-serif;
 }
 
+
 /* Titre principal de la section */
 .tournoi-title {
   font-size: 28px;
+  color: #003366;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.tournoi-title-2 {
+  font-size: 14px;
   color: #003366;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -769,6 +780,16 @@ nav.nav {
   display: block;
   width: 80px;
   height: 4px;
+  background: #64C93E;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.tournoi-title-2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
   background: #64C93E;
   margin: 10px auto 0;
   border-radius: 2px;
@@ -797,6 +818,14 @@ nav.nav {
   .tournoi-title h1 {
     font-size: 22px;   /* taille plus petite pour mobile */
     line-height: 1.3;  /* un peu plus compact */
+  }
+}
+
+/* Ajustement du titre du tournoi sur mobile */
+@media (max-width: 768px) {
+  .tournoi-title-2 h1 {
+    font-size: 11px;   /* taille plus petite pour mobile */
+    line-height: 0.8;  /* un peu plus compact */
   }
 }
 
@@ -1425,21 +1454,27 @@ h2 {
 
 /* --- Version mobile --- */
 @media (max-width: 768px) {
-  .partenaires-logos {
-    flex-wrap: nowrap;          /* pas de retour à la ligne */
-    gap: 10px;                  /* espace plus petit */
-    justify-content: center;    /* tout reste bien centré */
-    align-items: center;
-    overflow-x: auto;           /* permet de scroller horizontalement si trop large */
+    .partenaires-logos {
+    flex-wrap: wrap;          /* autorise plusieurs lignes */
+    overflow-x: hidden;       /* pas de scroll horizontal */
+    gap: 15px;
   }
 
-  .partenaires-section h2 {
-    font-size: 10px;            /* texte plus petit */
-    margin: 0 10px;
+  .partenaires-logos a {
+    width: calc(33.333% - 15px); /* 3 logos par ligne */
+    display: flex;
+    justify-content: center;
   }
 
   .partenaires-logos img {
-    max-width: 80px;            /* logos réduits */
+    max-width: 200px; /* tu gardes ta taille */
+    width: 100%;      /* s’adapte à la colonne */
+    height: auto;
+  }
+
+  .partenaires-section h2 {
+    font-size: 18px;  /* tu peux remettre plus lisible */
+    margin-bottom: 15px;
   }
 
   .partenaires-section {
